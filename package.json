@@ -6,6 +6,7 @@
   "scripts": {
     "test": ""
   },
+  "preferGlobal": true,
   "bin": {
     "ember-cli": "./index.js"
   },
