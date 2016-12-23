@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-var program  = require('commander'),
-    message  = require('./message'),
-    async    = require('async'),
-    commands = require('./commands');
+import 'babel-polyfill';
+import program from 'commander';
+import message from './message';
+import commands from './commands';
 
 program.version('0.0.0')
        .description('Utility to make updating ember-cli versions a little bit easier')
@@ -13,7 +13,6 @@ program.version('0.0.0')
 
 if(!program.updateGlobal && !program.updateProject) {
   message.error('Please provide an argument');
-  return;
 }
 
 if (program.updateGlobal) {

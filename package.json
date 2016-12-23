@@ -2,19 +2,20 @@
   "name": "ember-cli-utils",
   "version": "0.0.0",
   "description": "A small set of utilities to make working with ember-cli a little easier",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
-    "test": ""
+    "build": "babel src --out-dir lib",
+    "watch": "babel src --out-dir lib --watch"
   },
   "preferGlobal": true,
   "bin": {
-    "ember-cli": "./index.js"
+    "ember-cli": "./lib/index.js"
   },
   "author": "cbrock",
   "license": "MIT",
   "dependencies": {
-    "async": "^0.9.0",
     "chalk": "^0.5.1",
+    "co": "^4.6.0",
     "commander": "^2.6.0",
     "source-map-support": "^0.4.6"
   },
