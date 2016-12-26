@@ -1,6 +1,6 @@
-var exec    = require('child_process').exec,
-    co      = require('co'),
-    message = require('./message');
+import { exec } from 'child_process';
+import co from 'co';
+import message from './message';
 
 function versionIsValid(version) {
   return new Promise((resolve, reject) => {
@@ -21,7 +21,7 @@ function versionIsValid(version) {
       isValid = normalizedVersions.indexOf(version) > -1;
   
       if (!isValid) {
-        reject('Oops - ember-cli@' + version + ' does not exist in the npm registry!');
+        reject(`Oops - ember-cli@${version} does not exist in the npm registry!`);
       }
   
       resolve(isValid);
@@ -43,7 +43,7 @@ function listGlobalEmberCli () {
 
 function clearCache (name) {
   return new Promise ((resolve, reject) => {
-    exec(name + ' cache clean', function (error, stdout, stderr) {
+    exec(`${name} cache clean`, function (error, stdout, stderr) {
       if (error) {
         reject(error);
       }
@@ -80,12 +80,21 @@ function installGlobal (version) {
 exports.updateGlobal = function (version) {
   co(function *(){
     try {
+      message.notice('validating ember-cli version...');
       yield versionIsValid(version);
+
+      message.notice('cleaning npm cache...');
       yield clearCache('npm');
+
+      message.notice('cleaning Bower cache...')
       yield clearCache('bower');
-      yield uninstallGlobal();
-      yield installGlobal(version);
       
+      message.notice('uninstalling global ember-cli module...');
+      yield uninstallGlobal();
+      
+      message.notice('installing global ember-cli module');
+      yield installGlobal(version);
+    
       let output = yield listGlobalEmberCli();
       
       message.success('ember-cli updated globally! Running `ember --version` to verify...');
