@@ -11,8 +11,8 @@ program.version('0.0.0')
        .option('-p, --update-project <n>', 'Update an existing ember-cli project to the specified version of ember-cli')
        .parse(process.argv);
 
-if(!program.updateGlobal && !program.updateProject) {
-  message.error('Please provide an argument');
+if (!process.argv.slice(2).length) {
+  program.outputHelp();
 }
 
 if (program.updateGlobal) {
