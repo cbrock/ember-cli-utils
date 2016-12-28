@@ -2,6 +2,10 @@
   "name": "ember-cli-utils",
   "version": "0.0.0",
   "description": "A small set of utilities to make working with ember-cli a little easier",
+  "repository": {
+    "type" : "git",
+    "url" : "git@github.com:cbrock/ember-cli-utils.git"
+  },
   "main": "./lib/index.js",
   "scripts": {
     "build": "babel src --out-dir lib",
