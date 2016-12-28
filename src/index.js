@@ -2,7 +2,6 @@
 
 import 'babel-polyfill';
 import program from 'commander';
-import message from './message';
 import commands from './commands';
 
 program.version('0.0.0')

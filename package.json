@@ -8,7 +8,7 @@
   },
   "main": "./lib/index.js",
   "scripts": {
-    "build": "babel src --out-dir lib",
+    "build": "eslint src && babel src --out-dir lib",
     "watch": "babel src --out-dir lib --watch"
   },
   "preferGlobal": true,
@@ -21,12 +21,18 @@
     "chalk": "^0.5.1",
     "co": "^4.6.0",
     "commander": "^2.6.0",
+    "babel-polyfill": "^6.20.0",
     "source-map-support": "^0.4.6"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
-    "babel-polyfill": "^6.20.0",
-    "babel-preset-latest": "^6.16.0"
+    "babel-preset-latest": "^6.16.0",
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb-base": "^11.0.0",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1"
   },
   "babel": {
     "presets": [
