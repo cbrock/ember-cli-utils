@@ -1,4 +1,7 @@
 # ember-cli-utils
+
+[![Build Status](https://travis-ci.org/cbrock/ember-cli-utils.svg?branch=master)](https://travis-ci.org/cbrock/ember-cli-utils)
+
 A small set of utilities to help make working with ember-cli a little easier
 
 ## Installation
