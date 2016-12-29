@@ -45,6 +45,3 @@ jspm_packages
 
 # Yarn Integrity file
 .yarn-integrity
-
-# ember-cli-utils project files
-lib/*
