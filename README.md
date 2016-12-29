@@ -7,6 +7,7 @@ A small set of utilities to help make working with ember-cli a little easier
 ## Installation
 * `git clone` this repository and `cd` into the cloned directory
 * `npm install` to install npm dependencies
+* `npm run build` to build the source files
 * Run `npm link` to symlink as a global module
 * You can run `npm ls -g --depth=0` to verify that the module is listed
 
