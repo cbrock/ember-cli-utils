@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "description": "A small set of utilities to make working with ember-cli a little easier",
   "repository": {
-    "type" : "git",
-    "url" : "git@github.com:cbrock/ember-cli-utils.git"
+    "type": "git",
+    "url": "git@github.com:cbrock/ember-cli-utils.git"
   },
   "main": "./lib/index.js",
   "scripts": {
+    "test": "eslint src && babel src --out-dir lib && mocha --compilers js:babel-core/register",
     "build": "eslint src && babel src --out-dir lib",
     "watch": "babel src --out-dir lib --watch"
   },
@@ -27,12 +28,16 @@
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-preset-latest": "^6.16.0",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
     "eslint": "^3.12.2",
     "eslint-config-airbnb-base": "^11.0.0",
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-promise": "^3.4.0",
-    "eslint-plugin-standard": "^2.0.1"
+    "eslint-plugin-standard": "^2.0.1",
+    "mocha": "^3.2.0",
+    "nock-exec": "^0.1.0"
   },
   "babel": {
     "presets": [

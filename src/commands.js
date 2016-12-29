@@ -74,7 +74,8 @@ function installGlobal(version) {
 }
 
 module.exports = {
-// exports.updateGlobal = (version) => {
+  validateVersion: versionIsValid,
+
   updateGlobal(version) {
     co(function* updateGlobal() {
       try {
